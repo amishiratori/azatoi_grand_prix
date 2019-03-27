@@ -1,0 +1,97 @@
+*{
+  font-family: "M PLUS Rounded 1c";
+  color: #e37070;
+}
+.content {
+  position: absolute;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  text-align: center;
+  overflow: hidden;
+  background: #fcf8f3;
+}
+.container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  text-align: center;
+  overflow: hidden;
+  background: #fcf8f3;
+}
+
+#canvas {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: 10000;
+}
+
+h1{
+  font-size: 3rem;
+}
+
+h2{
+  font-size: 3rem;
+}
+
+@media only screen and (min-width: 900px) {
+  .mentor {
+    width: 25vw;
+    float: left;
+    margin: 2vh 0;
+  }
+  .mentor img {
+    width: 21vw;
+    padding: 0 2rem;
+  }
+  .mentor a{
+    text-decoration: none;
+    line-height: 0.5rem;
+    font-size: 2rem;
+  }
+  .mamemaki {
+    width: 40vw;
+    margin: 0 auto;
+  }
+  .mamemaki img{
+    width: 40vw;
+  }
+
+}
+
+@media only screen and (max-width: 900px) {
+  h1 {
+    display: block;
+    width: 80vw;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .mentor {
+    width: 50vw;
+    float: left;
+    margin: 1vh 0;
+  }
+  .mentor img {
+    width: 40vw;
+    padding: 0 1rem;
+  }
+  .mentor a{
+    text-decoration: none;
+    line-height: 0.5rem;
+  }
+  .mamemaki {
+    width: 80vw;
+    margin: 0 auto;
+  }
+  .mamemaki img{
+    width: 80vw;
+    margin: 10 5vw;
+  }
+
+}

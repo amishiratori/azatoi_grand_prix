@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>|平成最後の名古屋キャンプ|あざとさグランプリ</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="./css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+
+
+</head>
+<body>
+	<div class="content">
+		<h1>あざとさグランプリ</h1>
+		<div id="center">
+		<% Mentor.order(peas: "desc").all.each do |mentor| %>
+		<div class="mentor">
+			<a href="mentor/<%= mentor.id %>">
+				<img src="<%= mentor.img %>">
+				<h3><%= mentor.name %></h3>
+				<p><%= mentor.peas %>コ</p>
+			</a>
+			</div>
+		<% end %>
+		</div>
+	</div>
+	<div class="clear"></div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>|平成最後の名古屋キャンプ|あざとさグランプリ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href=".././css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
+
+</head>
+<body>
+	<div class="container">
+		<h1>エントリーNo.<%= @mentor.id %> <%=@mentor.name %></h1>
+    <h2><span id="peas"><%= @mentor.peas %></span>コ</h2>
+    <div class="mamemaki">
+      <img src="../<%= @mentor.img %>">
+    </div>
+	</div>
+  <canvas id="canvas"></canvas>
+  <script>
+    window.onload = function() {
+      $('#canvas').click(function(e) {
+        var num = Number($('#peas').text());
+        $.ajax('/peas/<%= @mentor.id %>', {
+          type: 'post'
+        })
+        .done(function() {
+          num = num + 1;
+          $('#peas').html(num);
+          var cvs = document.getElementById('canvas');
+          var ctx = cvs.getContext('2d');
+
+          var img = new Image();
+          img.src = "../images/azatoi.svg";
+
+          img.onload = function(){
+            console.log(e.pageX,e.pageY);
+            if (window.parent.screen.width >= 900 ){
+              ctx.drawImage(img,e.pageX/4,e.pageY/5,15,15);
+            }else{
+              ctx.drawImage(img,e.pageX/1.5,e.pageY/5,35,15);
+            }
+          }
+      })
+    })
+    }
+  </script>
+</body>
+</html>
